@@ -6,7 +6,13 @@ from tensorflow.keras.optimizers import Adam
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau
 from sklearn.model_selection import train_test_split
+from tensorflow.keras import backend as K
 
+def r_squared(y_true, y_pred):
+    ss_res = K.sum(K.square(y_true - y_pred))
+    ss_tot = K.sum(K.square(y_true - K.mean(y_true)))
+    return (1 - ss_res/(ss_tot + K.epsilon()))
+    
 base_data_train, base_data_test = np.load('../../data/training_data/training_data_1month.npy', allow_pickle=True)
 
 def create_cnn(input_shape):
@@ -23,7 +29,7 @@ def create_cnn(input_shape):
     ])
     return model
 
-def test_cnn(training_data, testing_data, index):
+def test_cnn(training_data, testing_data):
     X_train = training_data[:,:,0].reshape(-1,730,1)
     y_train = training_data[:,:,1]
 
@@ -44,23 +50,19 @@ def test_cnn(training_data, testing_data, index):
     
     return {'mse':mse, 'mae':mae, 'r2':r2.numpy()}
 
-def test_cnn_wrapper(training_data, testing_data, index=0):
-    if index == 0:
-        index = [0,3]
-    else:
-        index = [1,2]
+def test_cnn_wrapper(training_data, testing_data):
         
     mse, mae, r2 = 0, 0, 0
 
     # Run each CNN training 10 times to ensure results are significant and not outliers
-    for i in range(50):
+    for i in range(20):
         print(f'RUN: {i}')
-        results = test_cnn(np.random.permutation(training_data), testing_data, index) # permuting the data for each run just to ensure full shuffling
+        results = test_cnn(np.random.permutation(training_data), testing_data) # permuting the data for each run just to ensure full shuffling
         mse += results['mse']
         mae += results['mae']
         r2  += results['r2']
 
-    return {'mse':mse/50, 'mae':mae/50, 'r2':r2/50}
+    return {'mse':mse/20, 'mae':mae/20, 'r2':r2/20}
         
 if __name__ == '__main__':
     print("Testing")

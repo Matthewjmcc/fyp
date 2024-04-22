@@ -17,3 +17,7 @@ enhance model performance. Models trained on a combination of real and
 synthetic data generally showed reduced MSE compared to those trained only
 with real data, suggesting that synthetic data can be beneficial for improving the
 accuracy of forecasting models in CEA systems.
+
+### Acknowledgments ###
+
+This project was submitted by Matthew McCarthy for BSc Data Science and Analytics, supervised by Dr. Gregory Provan

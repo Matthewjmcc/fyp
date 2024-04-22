@@ -1,4 +1,4 @@
-# Using Data Synthesis to Improve Forecasting Accuracy for  Greenhouse Optimisation #
+# [Using Data Synthesis to Improve Forecasting Accuracy for  Greenhouse Optimisation](https://www.overleaf.com/project/65579eefc530df4aa4c1d490) #
 
 This project examines the use of **Machine Learning** (ML) techniques in
 Controlled Environment Agriculture (CEA) systems to optimise energy
@@ -17,6 +17,23 @@ enhance model performance. Models trained on a combination of real and
 synthetic data generally showed reduced MSE compared to those trained only
 with real data, suggesting that synthetic data can be beneficial for improving the
 accuracy of forecasting models in CEA systems.
+
+**File Structure:**
+- `/data`
+  - `/evaluation_results`
+  - `/gan_synthetic_data`
+  - `/models`
+  - `/openmodelica`
+  - `/training_data`
+  - `/vae_synthetic_data`
+- `/img`
+  - Images used in the final report
+- `/src`
+  - `/data_generation`
+  - `/data_processing`
+  - `/evaluation`
+  - `/openmodelica`
+
 
 ### Acknowledgments ###
 

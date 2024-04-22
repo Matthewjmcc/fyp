@@ -1,9 +1,9 @@
-Using Data Synthesis to Improve Forecasting Accuracy for  Greenhouse Optimisation
+# Using Data Synthesis to Improve Forecasting Accuracy for  Greenhouse Optimisation #
 
-This project examines the use of Machine Learning (ML) techniques in
+This project examines the use of **Machine Learning** (ML) techniques in
 Controlled Environment Agriculture (CEA) systems to optimise energy
 consumption. It assesses the effectiveness of two data synthesis methods,
-Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs),
+**Generative Adversarial Networks** (GANs) and **Variational Autoencoders** (VAEs),
 in creating synthetic datasets that replicate environmental conditions within
 greenhouses.
 Both GANs and VAEs are assessed for their ability to generate realistic datasets

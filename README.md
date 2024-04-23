@@ -34,6 +34,18 @@ accuracy of forecasting models in CEA systems.
   - `/evaluation`
   - `/openmodelica`
 
+#### /data/OpenModelica ####
+Contains 3 types of file, old simulation weather data:
+ - SC_10Dec-22Nov.txt 
+ - 10Dec-22Nov.csv
+New simulation weather data provided by the NOAA:
+ - SC_Jan2004-Jan2024.txt
+ - SP_Jan2004-Jan2024.txt
+ - Jan2004-Jan2024.txt
+OpenModelica model results:
+ - NOAA_10yr_reduced.csv
+ - NOAA_res_dropped.csv
+ - NOAA_res_reduced.csv
 
 ### Acknowledgments ###
 
